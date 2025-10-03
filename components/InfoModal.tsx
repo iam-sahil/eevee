@@ -306,7 +306,7 @@ export function InfoModal({ isOpen, onClose }: InfoModalProps) {
             </h3>
             <div className="flex flex-wrap gap-3">
               <a
-                href="https://github.com"
+                href="https://github.com/iam-sahil/eevee"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 px-4 py-2 bg-secondary hover:bg-accent text-secondary-foreground hover:text-accent-foreground rounded-lg transition-colors text-sm border border-border"
