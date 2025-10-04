@@ -136,7 +136,7 @@ const EmptyState = ({ onPromptClick }: EmptyStateProps) => {
               className={`flex items-center rounded-md gap-2 px-4 py-2 text-sm font-medium transition-colors ${
                 activeTab === category.id
                   ? "bg-primary/20 text-primary border border-primary/30"
-                  : "text-muted-foreground hover:text-foreground bg-white/5 border border-white/10 hover:bg-white/10"
+                  : "text-muted-foreground hover:text-foreground bg-foreground/5 border border-foreground/10 hover:bg-foreground/10"
               }`}
             >
               {tabIcons[category.id as keyof typeof tabIcons]}
@@ -149,12 +149,14 @@ const EmptyState = ({ onPromptClick }: EmptyStateProps) => {
           {Object.entries(currentPrompts).map(([category, prompts]) => (
             <div
               key={category}
-              className={`space-y-2 ${activeTab === category ? "block" : "hidden"}`}
+              className={`space-y-2 ${
+                activeTab === category ? "block" : "hidden"
+              }`}
             >
               {prompts.map((prompt, i) => (
                 <button
                   key={i}
-                  className="flex w-full justify-start px-4 py-4 h-auto text-left hover:bg-secondary/60 transition-colors duration-200 rounded-lg border border-border/40 bg-card/20"
+                  className="flex w-full justify-start px-4 py-4 h-auto text-left hover:bg-foreground/8 transition-colors duration-200 rounded-lg border border-foreground/10 bg-card/20 text-foreground/70 hover:text-foreground/90"
                   onClick={() => onPromptClick(prompt)}
                 >
                   <MessageSquare className="h-4 w-4 mr-3 flex-shrink-0 mt-1" />
@@ -217,7 +219,7 @@ export function ChatInterface() {
 
   const handleSendMessage = async (
     content: string,
-    attachments?: Attachment[],
+    attachments?: Attachment[]
   ) => {
     if (!content.trim() && !attachments?.length) return;
 
@@ -291,7 +293,7 @@ export function ChatInterface() {
     } catch (error) {
       console.error("Chat error:", error);
       toast.error(
-        error instanceof Error ? error.message : "Failed to send message",
+        error instanceof Error ? error.message : "Failed to send message"
       );
     } finally {
       setIsLoading(false);

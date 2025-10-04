@@ -255,7 +255,6 @@ export const InputArea = forwardRef<InputAreaRef, InputAreaProps>(
                   </button>
                 </div>
               </div>
-              <hr className="mb-4 mx-2 border-t border-primary/10" />
               {/* Controls Bar */}
               <div className="flex items-center justify-between gap-2 px-3 pb-3 pt-1">
                 {/* Left Side - Model Switcher */}
